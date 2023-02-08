@@ -1,0 +1,219 @@
+body {
+    background: #000;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+}
+button {
+    color: #000;
+    border-radius: 15px;
+    background: rgb(29, 171, 24)!important;
+    font-weight: 700;
+    font-size: 20px;
+    text-transform: uppercase;
+    padding: 15px 25px;
+    transition: ease-in-out 0.3s;
+}
+button:hover {
+    background: #000!important;
+    color: rgb(29, 171, 24)!important;
+    border: 1px solid rgb(29, 171, 24)!important;
+}
+.row {
+    display: flex;
+    margin: 0 -15px;
+}
+.m1 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.center {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.col {
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+}
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
+    padding: 10px 20px;
+}
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+.nav button {
+    margin: 0 5px;
+    border-radius: 15px;
+    font-size: 15px;
+}
+/*** CLOCK ***/
+
+.clock {
+    text-align: center;
+    font-size: 100px;
+    font-weight: 700;
+    color: rgb(29, 171, 24);
+}
+/*** TIMER ***/
+
+.inputNumber {
+    width: 5%;
+    padding: 10px;
+    margin: 0 10px;
+    border-radius: 10px;
+    font-size: 15px;
+}
+.message {
+    color: #fff; background: rgba(0, 0, 0, 0.8); 
+    font-size: 40px;    
+    margin: auto;
+    min-width: 80%;
+    min-height: 80%;
+    max-width: 1200px;
+    padding: 20px;
+}
+.close {
+    position: relative;
+    color: red;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+div#popup {
+    color: white;
+    font-size: 3rem;
+    margin: auto;
+    background: rgb(0 0 0 / 76%);
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+#timerDisplay {
+    color: rgb(29, 171, 24);
+    text-align: center;
+    font-size: 100px;
+}
+.timer {
+    text-align: center;
+    font-size: 100px;
+    font-weight: 700;
+    color: rgb(29, 171, 24);
+}
+#startStop, #reset {
+    margin: 0 5px;
+}
+/*** ALARM***/
+#alarmDisplay {
+    color: rgb(29, 171, 24);
+    text-align: center;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    margin: 2rem auto;
+    width: 100%;
+    max-width: 1200px;
+}
+input#alarmTime {
+    width: 20%;
+    border: 1px solid rgb(29, 171, 24);
+    color: rgb(29, 171, 24);
+    padding: 10px;
+    margin: 0 auto;
+    border-radius: 15px;
+    font-size: 15px;
+}
+
+#alarmMessage {
+    width: 50%;
+    min-height: 50px;
+    font-size: 30px;
+    font-weight: 700;
+    color: #000;
+    background: #fff;
+    margin: 0 auto;
+}
+.alarmButton {
+    margin: 1rem;
+    width: auto;
+}
+    /*** POPUP ***/
+.popup {
+    display: none!important;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    color: #000;    
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+/*** STOPWATCH ***/
