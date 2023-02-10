@@ -1,51 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alarme</title>
-    <link rel="stylesheet" href="/oclock/assets/css/style.css">
-</head>
-<body>
-    <?php include '../../includes/header.php' ?>
-    
-    <div class="container">
+<?php include '../../includes/header.php' ?>
 
-        <p class="center">Ajoutez une alarme pour être notifié à une heure précise.</p>
+<div class="container">
+
+    <div id="clockDisplay" class="horloge auto"></div>
         
-        <div class="col">
-            
-            <form action="">   
+    <div class="col">
+        
+        <form action="">   
+            <div class="row center m1">
+                <div class="col center">
+                    <label for="alarmTime" class="center">Heure de l'alarme : </label>
+                    <input type="time" name="timeinput" id="alarmTime" required>
+                </div>
+            </div> <!--/row-->
 
-                <div id="currentTime"></div>
-                <label for="alarmTime" class="center">Heure de l'alarme : </label>
-                <input type="time" name="timeinput" id="alarmTime" required>
-                
-                <label for="alarmMessage" class="center">Message : </label>
-                <input type="text" name="messageinput"  id="alarmMessage" required>
-                
-                <button id="alarmButton" type="submit" name="submitalarm" class="alarmButton">Ajouter une alarme</button>
+            <div class="row center m1">
+                <div class="col center">
+                    <label for="alarmMessage" class="center">Message : </label>
+                    <input type="text" name="messageinput"  id="alarmMessage" required>
+                </div>
+            </div> <!--/row-->
 
-            </form>
+            <button id="alarmButton" type="submit" name="submitalarm" class="alarmButton">Ajouter une alarme</button>
 
-            <!-- <div id="alarmDisplay"></div> -->
-            <div id="comingAlarm">
-                <h3>Alarmes programées</h3>
+        </form>
+        
+        <!-- <div id="alarmDisplay"></div> -->
+        <div class="row">
+            <div id="comingAlarm" class="col">
+                <h3 class="p border">Alarmes programées</h3>
                 <ul id="comingAlarmList"></ul>
             </div>
-            <div id="passedAlarm">
-                <h3>Alarmes terminées</h3>
+            <div class="col">&nbsp;&nbsp;</div>
+            <div id="passedAlarm" class="col">
+                <h3 class="p border">Alarmes terminées</h3>
                 <ul id="passedAlarmList"></ul>
             </div>
-            
-            <div id="popup" class="center">
-                <span class="close">&times;</span>
-            </div>
         </div>
-            
-    </div>
 
-    <script src="/oclock/assets/js/alarm.js"></script>
-</body>
-</html>
+        <div id="popup" class="center">
+            <span class="close">&times;</span>
+        </div>
+    </div>
+        
+</div>
+
+<script src="/oclock/assets/js/alarm.js"></script>
+<script src="/oclock/assets/js/clock.js"></script>
+
+<?php include '../../includes/footer.php' ?>

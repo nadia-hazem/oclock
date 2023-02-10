@@ -21,11 +21,14 @@ document.addEventListener('DOMContentLoaded', function () {
     let resetButton = document.getElementById('resetButton');
     let tourButton = document.getElementById('tourButton');
     let tourList = document.getElementById('tourList');
+    let lastTime = times[times.length - 1];
     
-    // Ajoute un "0" devant les nombres inférieurs à 10
     if (hours < 10) { hours = '0' + hours };
     if (mins < 10) { mins = '0' + mins };
     if (secs < 10) { secs= '0' + secs };
+    if (tenths < 10) { tenths = '0' + tenths };
+
+    document.getElementById("chronoSet").innerHTML = hours + ':' + mins + ':' + secs + ':' + tenths ;
 
     // fonction pour récupérer le temps actuel
     function getTime() {
@@ -35,31 +38,28 @@ document.addEventListener('DOMContentLoaded', function () {
     
     // Fonction pour incrémenter le temps affiché    
     function increment(){
-        // Si le chronomètre est en marche, on incrémente le temps affiché
-        if(running == 1){  
-
-            setTimeout(function(){  
-
-                timeValue++;  
-                let hours = Math.floor(timeValue/10/60/60);
-                let mins = Math.floor(timeValue/10/60);  
-                let secs = Math.floor(timeValue/10 % 60);  
-                let tenths = timeValue % 10; 
-                
+        if(running == 1){
+            setTimeout(function(){
+                timeValue++;
+                let tenths = (timeValue % 100);
+                let secs = Math.floor(timeValue / 100);
+                let mins = Math.floor(secs / 60);
+                let hours = Math.floor(mins / 60);
+                tenths = tenths % 100;
+                secs = secs % 60;
+                mins = mins % 60;
+                hours = hours % 60;
                 if (hours < 10) { hours = '0' + hours };
-                if (mins < 10) { mins = '0' + mins };  
-                if (secs < 10) { secs= '0' + secs };   
-
-                document.getElementById("chronoSet").innerHTML= hours + ':' + mins + ':' + secs + ':' + tenths ;   
-                // Appel de la fonction pour incrémenter le temps affiché
+                if (mins < 10) { mins = '0' + mins };
+                if (secs < 10) { secs= '0' + secs };
+                if (tenths < 10) { tenths = '0' + tenths };
+                document.getElementById("chronoSet").innerHTML = hours + ':' + mins + ':' + secs + ':' + tenths ;
                 increment();
-                
-            },100);
-            
-        } else { // Si le chronomètre est arrêté, on affiche le temps arrêté
-            
-            document.getElementById("chronoSet").innerHTML = hours + ':' + mins + ':' + secs + ':' + tenths ;
+            },10);
+        } else {
+            return;
         }
+
     }
 
     // Fonction pour démarrer le chronomètre 
@@ -91,17 +91,12 @@ document.addEventListener('DOMContentLoaded', function () {
     
     // Fonction pour ajouter un temps à la liste "temps"
     function addTimeToList () { 
-        let time = document.getElementById("chronoSet").innerHTML; // Récupère le temps affiché
-        times.push(time); // Ajoute le temps à la liste "temps"
-    }
-
-    // fonction pour afficher la liste "temps"
-    function displayTimeList () {
-        times.forEach(time => {
-            let li = document.createElement("li");
-            li.innerHTML = time;
-            tourList.appendChild(li);
-        });
+        let time = document.getElementById("chronoSet").innerHTML;
+        times.push(time);
+        let temps = document.createElement('li');
+        temps.innerHTML = time;
+        tourList.appendChild(temps);
+        tourList.style.display = "block";
     }
 
     // Fonction pour remettre le chronomètre à 0
@@ -125,22 +120,16 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Ecouteur d'événement sur le reset à 0
+    // Ecouteur d'événement sur le resetButton
     resetButton.addEventListener('click', function() {
         resetChrono();
     });
 
-    // Ecouteur d'événement sur le tour
-    tourButton.addEventListener('click', function(event) {
-        event.preventDefault();
-
-        tourButton.dataset.switch = 'tour'
-        if(tourButton.dataset.switch === 'tour') {
-            displayTimeList();
-            tourList.style.display = "block";
-        } else {
-            tourList.style.display = "none";
-        }
+    // Ecouteur d'événement sur le tourButton
+    tourButton.addEventListener('click', function() {
+        getTime();
+        addTimeToList();
     });
+
 
 }); // Fin du chargement du DOM

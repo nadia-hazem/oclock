@@ -1,26 +1,61 @@
 body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+
     background: #000;
+    background-image: url(../img/bg1.jpg);
     color: #fff;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     line-height: 1.5;
+    min-height: 100vh;
+    max-width: 100vw;
     margin: 0;
     padding: 0;
 }
+.p {
+    font-family: 'Arial Narrow Bold', sans-serif;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #6AB4B3;
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: #12349F;
+    background: #fff;
+}
+label {
+    color: #12349F;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+input {
+    color: #12349F;
+    width: 100%;
+    padding: 10px;
+    margin: 0 10px;
+    border-radius: 10px;
+    font-size: 15px;
+}
 button {
-    color: #000;
+    color: #fff;
     border-radius: 15px;
-    background: rgb(29, 171, 24)!important;
+    background: #12349F!important;
     font-weight: 700;
     font-size: 20px;
     text-transform: uppercase;
-    padding: 15px 25px;
+    padding: 15px 35px;
+    margin: 0 10px;
     transition: ease-in-out 0.3s;
 }
 button:hover {
-    background: #000!important;
-    color: rgb(29, 171, 24)!important;
-    border: 1px solid rgb(29, 171, 24)!important;
+    background: #12349F!important;
+    color: #fff!important;
 }
 .row {
     display: flex;
@@ -30,15 +65,25 @@ button:hover {
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
+.auto {
+    margin: 0 auto;
+}
+.border {
+    border: 1px solid #6AB4B3;
+    padding: 5px;
+}
 .center {
     display: flex;
     justify-content: center;
     align-content: center;
 }
+.justifyspacebetween {
+    display: flex;
+    justify-content: space-between;
+}
 .col {
     display: flex;
     flex-direction: column;
-    padding: 0 15px;
 }
 main {
     display: flex;
@@ -46,8 +91,8 @@ main {
     justify-content: center;
     align-items: center;
     width: 100%;
-    max-width: 1200px;
-    padding: 0 20px;
+    max-width: 100vw;
+    overflow: hidden;margin: 0;
 }
 .container {
     display: flex;
@@ -55,36 +100,28 @@ main {
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    width: 100%;
+    width: 50vw;
+    height: 100%;
     max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 5px solid #12349F;
+    border-radius: 15px;
 }
 header {
     display: flex;
     justify-content: center;
-    align-items: center;
     width: 100%;
     max-width: 1200px;
     padding: 20px;
-}
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+    text-align: center;
     margin: 0 auto;
-    width: 100%;
-    max-width: 1200px;
-    padding: 10px 20px;
 }
+
 .nav {
-    display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
-    width: 100%;
-    max-width: 1200px;
-    padding: 0 20px;
 }
 .nav button {
     margin: 0 5px;
@@ -97,17 +134,10 @@ nav {
     text-align: center;
     font-size: 100px;
     font-weight: 700;
-    color: rgb(29, 171, 24);
+    color: #12349F;
 }
 /*** TIMER ***/
 
-.inputNumber {
-    width: 5%;
-    padding: 10px;
-    margin: 0 10px;
-    border-radius: 10px;
-    font-size: 15px;
-}
 .message {
     color: #fff; background: rgba(0, 0, 0, 0.8); 
     font-size: 40px;    
@@ -117,59 +147,49 @@ nav {
     max-width: 1200px;
     padding: 20px;
 }
-.close {
-    position: relative;
-    color: red;
-    padding: 10px;
-    font-size: 20px;
-    cursor: pointer;
-}
-div#popup {
-    color: white;
-    font-size: 3rem;
-    margin: auto;
-    background: rgb(0 0 0 / 76%);
-    position: absolute;
-    width: 60%;
-    height: 60%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
-#timerDisplay {
-    color: rgb(29, 171, 24);
-    text-align: center;
-    font-size: 100px;
-}
 .timer {
     text-align: center;
     font-size: 100px;
     font-weight: 700;
-    color: rgb(29, 171, 24);
+    color: #12349F;
 }
 #startStop, #reset {
     margin: 0 5px;
 }
-/*** ALARM***/
+/*** ALARM ***/
+
 #alarmDisplay {
-    color: rgb(29, 171, 24);
+    color: #12349F;
     text-align: center;
 }
+.date {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff
+}
+
+.horloge {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    color: #12349F;
+}
+
 form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
-    margin: 2rem auto;
+    margin: 1rem auto;
     width: 100%;
     max-width: 1200px;
 }
 input#alarmTime {
-    width: 20%;
-    border: 1px solid rgb(29, 171, 24);
-    color: rgb(29, 171, 24);
+    width: 50%;
+    border: 1px solid #12349F;
+    color: #12349F;
     padding: 10px;
     margin: 0 auto;
     border-radius: 15px;
@@ -177,43 +197,58 @@ input#alarmTime {
 }
 
 #alarmMessage {
-    width: 50%;
-    min-height: 50px;
     font-size: 30px;
     font-weight: 700;
-    color: #000;
+    color: #12349F;
     background: #fff;
-    margin: 0 auto;
 }
 .alarmButton {
     margin: 1rem;
     width: auto;
 }
     /*** POPUP ***/
-.popup {
-    display: none!important;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    color: #000;    
-    background-color: rgba(255, 255, 255, 0.4);
+
+div#popup {
+    display: none;
+    color: #fff!important;
+    font-size: 3rem;
+    margin: auto;
+    background: rgba(18, 51, 159, 0.8);
+    position: absolute;
+    width: 75%;
+    height: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding-top: 300px;
+    border-radius: 15px;
 }
 
 .close {
-    color: #aaa;
-    float: right;
-    font-size: 30px;
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    float: center;
+    font-size: 50px;
     font-weight: bold;
 }
 
 .close:hover,
 .close:focus {
-    color: #fff;
+    color: #12349F;
     text-decoration: none;
     cursor: pointer;
 }
-/*** STOPWATCH ***/
+/*** CHRONO ***/
+#tourList {
+    display: none;
+}
+#tourList li {
+    text-align: center;
+    list-style: none;
+    font-size: 20px;
+    font-weight: 700;
+    color: #12349F;
+}
