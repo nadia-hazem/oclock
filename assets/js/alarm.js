@@ -22,8 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // fonction pour récupérer l'heure courante
     function getCurrentTime() {
         date = new Date();
-        /* let hour = date.getHours();
-        let minute = date.getMinutes(); */
+    }
 
     // fonction pour afficher l'heure courante
     function displayCurrentTime() {
@@ -31,9 +30,6 @@ document.addEventListener('DOMContentLoaded', function () {
         let actualTime = getCurrentTime();
         // affichage de l'heure courante
         actualTimeDisplay.innerHTML = actualTime;
-    }
-
-
         // Formatage de l'heure
         let currentTime = date.getHours() + ":" + date.getMinutes();
         return currentTime;
