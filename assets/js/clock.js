@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // new version :)
     function horloge() {
-        var dt = new Date().toLocaleTimeString(); // hh:mm:ss
+        let dt = new Date().toLocaleTimeString(); // hh:mm:ss
     
         document.getElementById("clockDisplay").innerHTML = dt;
         setTimeout(horloge, 1000); // mise à jour du contenu "clockDisplay" toutes les secondes
@@ -17,8 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 /*
-    }
-    displayDate();
+    // old version :(
     function displayClock() {
         let date = new Date();
         let hour = date.getHours();

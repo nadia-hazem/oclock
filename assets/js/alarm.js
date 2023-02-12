@@ -17,60 +17,51 @@ document.addEventListener('DOMContentLoaded', function () {
     let passedAlarm = document.querySelector('#passedAlarmList');
     let pop = document.querySelector('#popup');
     pop.style.display = 'none';
-    let close = document.querySelector('.close');
+    let close = document.querySelector('.close');   
 
     // fonction pour récupérer l'heure courante
     function getCurrentTime() {
-        date = new Date();
-    }
+        let date = new Date();
+        let hours = date.getHours();
+        let minutes = date.getMinutes();
 
-    // fonction pour afficher l'heure courante
-    function displayCurrentTime() {
-        // récupération de l'heure courante
-        let actualTime = getCurrentTime();
-        // affichage de l'heure courante
-        actualTimeDisplay.innerHTML = actualTime;
-        // Formatage de l'heure
-        let currentTime = date.getHours() + ":" + date.getMinutes();
-        return currentTime;
+        if (hours < 10) { hours = "0" + hours; }
+        if (minutes < 10) { minutes = "0" + minutes; }
+
+        return `${hours}:${minutes}`;
     }
 
     // fonction pour récupérer l'heure de l'alarme
     function getAlarmTime() {
-        alarmValue = alarmInput.value;
-        return alarmValue;
+        return alarmInput.value;
     }
 
     // fonction pour récupérer le message de l'alarme
     function getAlarmMessage() {
-        messageValue = messageInput.value;
-        return messageValue;
+        return messageInput.value;
     }
 
     // fonction pour calculer la différence entre l'heure courante et l'heure de l'alarme
     function compareTime() {
-        // récupération de l'heure courante
         let actualTime = getCurrentTime();
-        // récupération de l'heure de l'alarme
         let alarmTime = getAlarmTime();
-        // récupération du message de l'alarme
         let alarmMessage = getAlarmMessage();
-        // comparaison de l'heure courante et de l'heure de l'alarme
-        if (actualTime > alarmTime) {
-            // création de l'alarme dans la liste des alarmes passées
+
+        console.log(actualTime);
+        console.log(alarmTime);
+        console.log(alarmMessage);
+
+        if (actualTime >= alarmTime) {
+            // create the alarm in the passed alarms list
             let alarm = document.createElement('li');
-            // affichage de l'heure de l'alarme et du message de l'alarme
-            alarm.innerHTML = alarmTime + " - " + alarmMessage;
-            // ajout de l'alarme dans la liste des alarmes passées
+            alarm.innerHTML = `${alarmInput.value} - ${alarmMessage} - Expirée`;
             passedAlarm.appendChild(alarm);
         } else {
-            // création de l'alarme dans la liste des alarmes futures
+            // create the alarm in the coming alarms list
             let alarm = document.createElement('li');
-            // affichage de l'heure de l'alarme et du message de l'alarme
-            alarm.innerHTML = alarmTime + " - " + alarmMessage;
-            // ajout de l'alarme dans la liste des alarmes futures
+            alarm.innerHTML = `${alarmInput.value} - ${alarmMessage} - Dans ${displayRemainingTime()}`;
             comingAlarm.appendChild(alarm);
-        }   
+        } 
     }
 
     // fonction pour récupérer les alarmes futures
@@ -82,35 +73,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // fonction pour afficher le temps restant avant l'alarme
     function displayRemainingTime() {
-        // récupération des alarmes futures
-        let comingAlarms = getComingAlarms();
-        // récupération de l'heure courante
-        let actualTime = getCurrentTime();
-        // calcul du temps restant avant l'alarme
-        for (let i = 0; i < comingAlarms.length; i++) {
-            // récupération de l'heure de l'alarme
-            let alarm = comingAlarms[i];
-            // Séparer l'heure de l'alarme et le message de l'alarme
-            let alarmTime = alarm.innerHTML.split(' - ')[0];
-            let alarmMessage = alarm.innerHTML.split(' - ')[1];
-            // Séparer l'heure et les minutes de l'alarme
-            let alarmSplit = alarmTime.split(':');
-            // récupération de l'heure et des minutes de l'alarme
-            let alarmHour = alarmSplit[0];
-            let alarmMinute = alarmSplit[1];
-            // Séparer l'heure et les minutes de l'heure courante
-            let actualSplit = actualTime.split(':');
-            // récupération de l'heure et des minutes de l'heure courante
-            let actualHour = actualSplit[0];
-            let actualMinute = actualSplit[1];
-            // calcul du temps restant avant l'alarme
-            let remainingHour = alarmHour - actualHour;
-            let remainingMinute = alarmMinute - actualMinute;
-            // affichage du temps restant avant l'alarme
-            let remainingTime = remainingHour + ":" + remainingMinute;
-            // affichage de l'heure de l'alarme, du message de l'alarme et du temps restant avant l'alarme
-            alarm.innerHTML = alarmTime + " - " + alarmMessage + " - dans " + remainingTime;
+        alarmHour = parseInt(getAlarmTime().split(':')[0]);
+        alarmMinute = parseInt(getAlarmTime().split(':')[1]); 
+        actualHour = parseInt(getCurrentTime().split(':')[0]);
+        actualMinute = parseInt(getCurrentTime().split(':')[1]);
+        // Si l'heure de l'alarme et les minutes sont inférieurs à l'heure courante et les minutes
+        if (alarmHour < actualHour || (alarmHour == actualHour && alarmMinute < actualMinute)) {
+            // On ajoute 24h à l'heure de l'alarme et on soustrait l'heure courante
+            remainingHour = 24 + alarmHour - actualHour;
+            // On ajoute 60min à l'heure de l'alarme et on soustrait l'heure courante
+            remainingMinute = 60 + alarmMinute - actualMinute;
+        } 
+        else {
+            // Sinon on soustrait l'heure courante à l'heure de l'alarme
+            remainingHour = alarmHour - actualHour;
+            // On soustrait les minutes courantes aux minutes de l'alarme
+            remainingMinute = alarmMinute - actualMinute;
         }
+        // On retourne le temps restant avant l'alarme
+        return `${remainingHour}h${remainingMinute}min`;
     }
 
     // fonction pour faire sonner l'alarme
@@ -122,27 +103,34 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // On parcourt la liste des alarmes futures
         for (let i = 0; i < comingAlarms.length; i++) {
-            // récupération de l'heure de l'alarme
-            let alarm = comingAlarms[i];
-            // Séparer l'heure de l'alarme et le message de l'alarme
-            let alarmTime = alarm.innerHTML.split(' - ')[0];
-            let alarmMessage = alarm.innerHTML.split(' - ')[1];
+            // On récupère l'alarme
+            let actualTime = getCurrentTime();
+            // On récupère les alarmes futures
+            let comingAlarms = getComingAlarms();
 
-            // Si l'heure de l'alarme est égale à l'heure courante
-            if (alarmTime == actualTime) {
-                // suppression de l'alarme de la liste des alarmes futures
-                alarm.innerHTML = alarmTime + " - " + alarmMessage;
-                // passage de l'alarme dans la liste des alarmes passées
-                passedAlarm.appendChild(alarm);
-                // affichage de la popup
-                pop.style.display = 'block';
-                // création du message de l'alarme dans la popup
-                let p = document.createElement('p');
-                p.innerHTML = alarmTime + " - " + alarmMessage;
-                // ajout du message de l'alarme dans la popup
-                pop.appendChild(p);
-                // Déclenchement du son de l'alarme
-                ringtone.play();
+            // On parcourt la liste des alarmes futures
+            for (let i = 0; i < comingAlarms.length; i++) {
+                let alarm = comingAlarms[i];
+                // On split l'alarme pour récupérer l'heure et le message
+                let alarmTime = alarm.innerHTML.split(" - ")[0];
+                let alarmMessage = alarm.innerHTML.split(" - ")[1];
+
+                // Si l'heure courante est égale à l'heure de l'alarme
+                if (actualTime == alarmTime) {
+                    // On récupère l'alarme
+                    alarm.innerHTML = alarmTime + " - " + alarmMessage;
+                    // On supprime l'alarme de la liste des alarmes futures et on l'ajoute dans la liste des alarmes passées
+                    passedAlarm.appendChild(alarm);
+                    // affichage de la popup
+                    pop.style.display = 'block';
+                    // création du message de l'alarme dans la popup
+                    let p = document.createElement('p');
+                    p.innerHTML = alarmTime + " - " + alarmMessage;
+                    // ajout du message de l'alarme dans la popup
+                    pop.appendChild(p);
+                    // Déclenchement du son de l'alarme
+                    ringtone.play();
+                }
             }
         }
     }
@@ -151,6 +139,8 @@ document.addEventListener('DOMContentLoaded', function () {
     alarmButton.addEventListener('click', function (event) {
         // annulation de l'action par défaut du bouton
         event.preventDefault();
+        getAlarmTime();
+        getAlarmMessage();
         // lance la fonction compareTime
         compareTime();
         // lance la fonction displayRemainingTime
@@ -164,10 +154,16 @@ document.addEventListener('DOMContentLoaded', function () {
     close.addEventListener('click', function (event) {
         // annulation de l'action par défaut du bouton
         event.preventDefault();
+        // vider le message de l'alarme dans la popup
+        pop.innerHTML = '';
+        // garder la croix de fermeture de la popup
+        pop.appendChild(close);
         // fermeture de la popup
         pop.style.display = 'none';
         // suspension du son de l'alarme
         ringtone.pause();
+        // Ajouter mention "Expirée" à l'alarme dans la liste des alarmes passées
+        passedAlarm.lastElementChild.innerHTML += `Expirée`;
     });
 
     // lancement des fonctions toutes les secondes

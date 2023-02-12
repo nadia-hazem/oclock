@@ -44,7 +44,8 @@
         
 </div>
 
-<script src="/oclock/assets/js/alarm.js"></script>
 <script src="/oclock/assets/js/clock.js"></script>
+<script src="/oclock/assets/js/alarm.js"></script>
+<!-- <script src="/oclock/assets/js/clock.js"></script> -->
 
 <?php include '../../includes/footer.php' ?>

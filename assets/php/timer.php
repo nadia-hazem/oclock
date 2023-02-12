@@ -36,5 +36,5 @@
     
 </div>
 
-<script src="../js/timer.js"></script>
+<script src="/oclock/assets/js/timer.js"></script>
 <?php include '../../includes/footer.php' ?>
