@@ -10,27 +10,22 @@ The goal of this project is to reproduce a timer, a stopwatch, an alarm clock, a
 * Finally for the alarm clock, the user can enter a time and a text in input. When the clock reaches the time entered, an alert (and not a popup) appears indicating the message that the user will have entered. In addition, the user will have the possibility to enter several alarms which will be displayed in a list, with “passed” if the time of the alarm has passed, and “in x time” with x representing the time remaining until the time is reached.
 --
 
-### L'horloge :watch:  
-![Horloge](https://github.com/nadia-hazem/oclock/blob/5f08bedcd092819aedb2627bb4c5c0f5e143dcba/assets/img/horloge.png)
-### Le minuteur :hourglass_flowing_sand:  
-![Minuteur](https://github.com/nadia-hazem/oclock/blob/2160d03fdef92c9feaad9f83ac5062c545a05769/assets/img/minuteur.png)
-### Le chrono :hourglass:  
-![Chrono](https://github.com/nadia-hazem/oclock/blob/2160d03fdef92c9feaad9f83ac5062c545a05769/assets/img/chrono.png)
-### L'alarme :alarm_clock:  
-![Alarme](https://github.com/nadia-hazem/oclock/blob/2160d03fdef92c9feaad9f83ac5062c545a05769/assets/img/alarme.png)  
-
 <img align="left" src="https://github.com/nadia-hazem/oclock/blob/5f08bedcd092819aedb2627bb4c5c0f5e143dcba/assets/img/horloge.png">
 <h1> L'horloge :watch: </h1>
+Une horloge affichant l'heure et la date du jour
 <br clear="left"/>  
 
 <img align="left" src="https://github.com/nadia-hazem/oclock/blob/2160d03fdef92c9feaad9f83ac5062c545a05769/assets/img/minuteur.png">
 <h1> Le minuteur :hourglass_flowing_sand:   </h1>
+Un minuteur avec un bouton "start/stop" et un bouton "reset"
 <br clear="left"/>  
 
 <img align="left" src="https://github.com/nadia-hazem/oclock/blob/2160d03fdef92c9feaad9f83ac5062c545a05769/assets/img/chrono.png">
 <h1> Le chrono :hourglass:   </h1>
+Un chronomètre avec millièmes de secondes et un bouton "Tour" pour afficher le temps saisi au click et un bouton "reset"
 <br clear="left"/>  
 
 <img align="left" src="https://github.com/nadia-hazem/oclock/blob/2160d03fdef92c9feaad9f83ac5062c545a05769/assets/img/alarme.png">
 <h1> L'alarme :alarm_clock:  </h1> 
+Une alarme avec liste d'alarmes à venir et passées. Affichage du "temps restant" ou "Expiré" et bouton reset. Alerte sonore et popup
 <br clear="left"/>  
