@@ -12,19 +12,20 @@
     <link rel="stylesheet" href="/oclock/assets/css/style.css">
     <!-- JS -->
     <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-
+    <!-- Fontawesome kit -->
+    <script src="https://kit.fontawesome.com/a05ac89949.js" crossorigin="anonymous"></script>
 </head>
 
 <header>
     <nav class="row nav">
         <ul id="menu">
-            <li><a href="/oclock/index.php"><button class="btn">Horloge</button></a></li>
+            <li><a href="/oclock/index.php"><button class="btn"><i class="fas fa-clock"></i></button></a></li>
 
-            <li><a href="/oclock/assets/php/timer.php"><button class="btn">Minuteur</button></a></li>
+            <li><a href="/oclock/assets/php/timer.php"><button class="btn"><i class="fas fa-hourglass-half"></i></i></i></button></a></li>
 
-            <li><a href="/oclock/assets/php/chrono.php"><button class="btn">Chrono</button></a></li>
+            <li><a href="/oclock/assets/php/chrono.php"><button class="btn"><i class="fas fa-stopwatch"></i></button></a></li>
 
-            <li><a href="/oclock/assets/php/alarm.php"><button class="btn">Alarme</button></a></li>
+            <li><a href="/oclock/assets/php/alarm.php"><button class="btn"><i class="fas fa-bell"></i></button></a></li>
         </ul>
     </nav>
 </header>
