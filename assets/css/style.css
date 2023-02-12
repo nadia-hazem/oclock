@@ -219,8 +219,8 @@ div#popup {
     margin: auto;
     background: rgba(18, 51, 159, 0.8);
     position: absolute;
-    width: 900px;
-    height: 400px;
+    width: 70%;
+    height: 70%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
