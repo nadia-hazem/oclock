@@ -1,4 +1,4 @@
-# oclock
+# oclock ![O'clock](https://www.gifsanimes.com/data/media/929/reveil-image-animee-0003.gif)
 A timer, a stopwatch, an alarm clock, and a clock in JavaScript.
 
 ## Project description
