@@ -24,13 +24,13 @@ The goal of this project is to reproduce a timer, a stopwatch, an alarm clock, a
 <br clear="left"/>  
 
 <img align="left" src="https://github.com/nadia-hazem/oclock/blob/2160d03fdef92c9feaad9f83ac5062c545a05769/assets/img/minuteur.png">
-### Le minuteur :hourglass_flowing_sand:   
+<h1> Le minuteur :hourglass_flowing_sand:   </h1>
 <br clear="left"/>  
 
 <img align="left" src="https://github.com/nadia-hazem/oclock/blob/2160d03fdef92c9feaad9f83ac5062c545a05769/assets/img/chrono.png">
-### Le chrono :hourglass:   
+<h1> Le chrono :hourglass:   </h1>
 <br clear="left"/>  
 
 <img align="left" src="https://github.com/nadia-hazem/oclock/blob/2160d03fdef92c9feaad9f83ac5062c545a05769/assets/img/alarme.png">
-### L'alarme :alarm_clock:   
+<h1> L'alarme :alarm_clock:  </h1> 
 <br clear="left"/>  
