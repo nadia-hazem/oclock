@@ -14,17 +14,17 @@ The goal of this project is to reproduce a timer, a stopwatch, an alarm clock, a
 <h1> L'horloge :watch: </h1>
 Une horloge affichant l'heure et la date du jour
 <br clear="left"/>  
-
+<br>
 <img align="left" src="https://github.com/nadia-hazem/oclock/blob/2160d03fdef92c9feaad9f83ac5062c545a05769/assets/img/minuteur.png">
 <h1> Le minuteur :hourglass_flowing_sand:   </h1>
 Un minuteur avec un bouton "start/stop" et un bouton "reset"
 <br clear="left"/>  
-
+<br>
 <img align="left" src="https://github.com/nadia-hazem/oclock/blob/2160d03fdef92c9feaad9f83ac5062c545a05769/assets/img/chrono.png">
 <h1> Le chrono :hourglass:   </h1>
 Un chronomètre avec millièmes de secondes et un bouton "Tour" pour afficher le temps saisi au click et un bouton "reset"
 <br clear="left"/>  
-
+<br>
 <img align="left" src="https://github.com/nadia-hazem/oclock/blob/2160d03fdef92c9feaad9f83ac5062c545a05769/assets/img/alarme.png">
 <h1> L'alarme :alarm_clock:  </h1> 
 Une alarme avec liste d'alarmes à venir et passées. Affichage du "temps restant" ou "Expiré" et bouton reset. Alerte sonore et popup
