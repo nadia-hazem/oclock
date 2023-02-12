@@ -22,7 +22,7 @@ Timer with start/stop and reset button. Sound alert and popup
 <br clear="left"/>  
 <br>
 <img align="left" src="https://github.com/nadia-hazem/oclock/blob/2160d03fdef92c9feaad9f83ac5062c545a05769/assets/img/chrono.png">
-<h1> Le chrono :hourglass:   </h1>
+<h1> Le chrono :stopwatch:   </h1>
 A stopwatch with thousandths and a "Lap" button to display the time entered on click and a "reset" button
 <br clear="left"/>  
 <br>
