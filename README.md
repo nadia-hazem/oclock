@@ -20,9 +20,17 @@ The goal of this project is to reproduce a timer, a stopwatch, an alarm clock, a
 ![Alarme](https://github.com/nadia-hazem/oclock/blob/2160d03fdef92c9feaad9f83ac5062c545a05769/assets/img/alarme.png)  
 
 <img align="left" src="https://github.com/nadia-hazem/oclock/blob/5f08bedcd092819aedb2627bb4c5c0f5e143dcba/assets/img/horloge.png">
-
-some text aligned to the right of the image
-
+### L'horloge :watch: 
 <br clear="left"/>
 
-and some text that is below the image (without an obnoxious number of <br /> tags).
+<img align="left" src="https://github.com/nadia-hazem/oclock/blob/2160d03fdef92c9feaad9f83ac5062c545a05769/assets/img/minuteur.png">
+### Le minuteur :hourglass_flowing_sand:   
+<br clear="left"/>
+
+<img align="left" src="https://github.com/nadia-hazem/oclock/blob/2160d03fdef92c9feaad9f83ac5062c545a05769/assets/img/chrono.png">
+### Le chrono :hourglass:   
+<br clear="left"/>
+
+<img align="left" src="https://github.com/nadia-hazem/oclock/blob/2160d03fdef92c9feaad9f83ac5062c545a05769/assets/img/alarme.png">
+### L'alarme :alarm_clock:   
+<br clear="left"/>
