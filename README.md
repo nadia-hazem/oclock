@@ -8,12 +8,12 @@ The goal of this project is to reproduce a timer, a stopwatch, an alarm clock, a
 * For the stopwatch, you will have to start it and stop it with the same button (on / off). Additionally, you will need to implement a “lap” button, which will add the displayed time, at the moment the user presses, into a “time” list. A reset button will be present to reset the timer to 0.
 * As for the clock, it must be in French time (UTC + 1), functional, and give the hour, the minutes, and the seconds.
 * Finally for the alarm clock, the user can enter a time and a text in input. When the clock reaches the time entered, an alert (and not a popup) appears indicating the message that the user will have entered. In addition, the user will have the possibility to enter several alarms which will be displayed in a list, with “passed” if the time of the alarm has passed, and “in x time” with x representing the time remaining until the time is reached.
------
+--
 ### L'horloge
-![Horloge](https://github.com/nadia-hazem/oclock/assets/img/horloge.png)
+![Horloge](https://github.com/nadia-hazem/oclock/blob/5f08bedcd092819aedb2627bb4c5c0f5e143dcba/assets/img/horloge.png)
 ### Le minuteur
-![Minuteur](https://github.com/nadia-hazem/oclock/assets/img/minuteur.png)
+![Minuteur](https://github.com/nadia-hazem/oclock/blob/2160d03fdef92c9feaad9f83ac5062c545a05769/assets/img/minuteur.png)
 ### Le chrono
-![Chrono](https://github.com/nadia-hazem/oclock/assets/img/chrono.png)
+![Chrono](https://github.com/nadia-hazem/oclock/blob/2160d03fdef92c9feaad9f83ac5062c545a05769/assets/img/chrono.png)
 ### L'alarme
-![Alarme](https://github.com/nadia-hazem/oclock/assets/img/alarm.png)
+![Alarme](https://github.com/nadia-hazem/oclock/blob/2160d03fdef92c9feaad9f83ac5062c545a05769/assets/img/alarme.png)
