@@ -10,7 +10,7 @@ The goal of this project is to reproduce a timer, a stopwatch, an alarm clock, a
 * Finally for the alarm clock, the user can enter a time and a text in input. When the clock reaches the time entered, an alert (and not a popup) appears indicating the message that the user will have entered. In addition, the user will have the possibility to enter several alarms which will be displayed in a list, with “passed” if the time of the alarm has passed, and “in x time” with x representing the time remaining until the time is reached.
 -----
 ### L'horloge
-![Horloge](https://github.com/nadia-hazem/oclock/tree/main/assets/img/horloge.png)
+![Horloge](https://github.com/nadia-hazem/oclock/blob/5f08bedcd092819aedb2627bb4c5c0f5e143dcba/assets/img/horloge.png)
 ### Le minuteur
 ![Minuteur](https://github.com/nadia-hazem/oclock/main/assets/img/minuteur.png)
 ### Le chrono
