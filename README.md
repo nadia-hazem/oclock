@@ -12,8 +12,8 @@ The goal of this project is to reproduce a timer, a stopwatch, an alarm clock, a
 ### L'horloge
 ![Horloge](https://github.com/nadia-hazem/oclock/blob/5f08bedcd092819aedb2627bb4c5c0f5e143dcba/assets/img/horloge.png)
 ### Le minuteur
-![Minuteur](https://github.com/nadia-hazem/oclock/main/assets/img/minuteur.png)
+![Minuteur](https://github.com/nadia-hazem/oclock/blob/2160d03fdef92c9feaad9f83ac5062c545a05769/assets/img/minuteur.png)
 ### Le chrono
-![Chrono](https://github.com/nadia-hazem/oclock/main/assets/img/chrono.png)
+![Chrono](https://github.com/nadia-hazem/oclock/blob/2160d03fdef92c9feaad9f83ac5062c545a05769/assets/img/chrono.png)
 ### L'alarme
-![Alarme](https://github.com/nadia-hazem/oclock/main/assets/img/alarm.png)
+![Alarme](https://github.com/nadia-hazem/oclock/blob/2160d03fdef92c9feaad9f83ac5062c545a05769/assets/img/alarme.png)
